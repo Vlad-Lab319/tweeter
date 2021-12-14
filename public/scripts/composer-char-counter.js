@@ -1,6 +1,6 @@
 $(document).ready(() => {
 
-  let tweetLength = 141;
+  const tweetLength = 140;
   // const tweetInput = $("#tweet-text");
   // console.log(tweetInput);
   // $(".counter").text(tweetLength);
@@ -26,9 +26,10 @@ $(document).ready(() => {
     // const newTweet = this;
     // const newTweet = tweetInput.val();
     // console.log('input', newTweet, newTweet.length);
-    console.log('input', $(this).val());
-    counter = tweetLength - $(this).val().length;
-    console.log('counter', counter);
-    $(".counter").text(counter);
+    // console.log('input', $(this).val());
+    let counter = tweetLength - $(this).val().length;
+    // console.log('parent', $(this).parent().prop("tagName"));
+    // $(".counter").text(counter);
+    $($(this).parent().prop("tagName") + " div .counter").text(counter);
   })
 });
