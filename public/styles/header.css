@@ -8,5 +8,6 @@ header {
   flex-direction: column;
   justify-items: center;
   align-items: center;
-  background-image: url("../images/cross-scratches.png");
+  /* background-image: url("../images/cross-scratches.png"); */
+  background-image: url("../images/bright-squares.png");
 }
