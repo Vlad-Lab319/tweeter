@@ -1,19 +1,32 @@
 nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  /* align-content: center; */
   height: 120px;
   width: 100%;
   background-color: #4056A1;
   color: #FFFFFF;
- 
+  padding-left: 1.5em;
+  padding-right: 1.5em;
+  z-index: 1;
 
 }
 
 nav span {
   font-family: 'Bungee';
-  font-size: 48px;
-  padding-left: 1.5em;
-  padding-right: 1.5em;
+  font-size: 36px;
 }
 
-nav i {
+nav line {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-style: normal;
+}
+
+.fas {
   color: red;
 }
