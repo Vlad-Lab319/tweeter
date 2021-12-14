@@ -1,7 +1,9 @@
 $(document).ready(() => {
 
-  let counter = 141;
-  const tweetInput = $("#tweet-text");
+  let tweetLength = 141;
+  // const tweetInput = $("#tweet-text");
+  // console.log(tweetInput);
+  // $(".counter").text(tweetLength);
 
   // console.log('Composer connected');
   // $("#tweet-text").on('keypress', () => {
@@ -24,6 +26,9 @@ $(document).ready(() => {
     // const newTweet = this;
     // const newTweet = tweetInput.val();
     // console.log('input', newTweet, newTweet.length);
-    console.log('input', $(this).val(), $(this).val().length);
+    console.log('input', $(this).val());
+    counter = tweetLength - $(this).val().length;
+    console.log('counter', counter);
+    $(".counter").text(counter);
   })
 });
