@@ -1,0 +1,9 @@
+.tweets {
+  display: flex;
+  background-color: transparent;
+}
+
+.tweet header {
+    background-color: transparent;
+    background-image: none;
+}
