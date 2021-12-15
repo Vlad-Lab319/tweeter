@@ -84,8 +84,11 @@ $("#tweet-form").on("submit", function(event) {
   } else if (tweetLength === 0 ) {
     alert("Empty tweet is not allowed!");
   } else {
+
     $.post('/tweets', $(this).serialize())
+    .then($('#tweets-container').empty())
     .then(loadTweets);
+    
     $("#tweet-text").val('');
 
   }
