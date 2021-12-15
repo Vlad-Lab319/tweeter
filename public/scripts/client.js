@@ -78,7 +78,15 @@ const createTweetElement = function(data) {
 
 $("#tweet-form").on("submit", function(event) {
   event.preventDefault();
-  $.post('/tweets', $(this).serialize());
+  const tweetLength = $("#tweet-text").val().length;
+  if (tweetLength > 140) {
+    alert("Too long tweet!");
+  } else if (tweetLength === 0 ) {
+    alert("Empty tweet is not allowed!");
+  } else {
+    $.post('/tweets', $(this).serialize());
+
+  }
 });
 
 const loadTweets = function() {
