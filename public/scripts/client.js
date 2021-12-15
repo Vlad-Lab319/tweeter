@@ -6,6 +6,8 @@
 
 $(document).ready(() => {
 
+// Rendering all tweets
+
 const renderTweets = function(tweets) {
   // loops through tweets
   for (let tweet of tweets) {
@@ -15,6 +17,8 @@ const renderTweets = function(tweets) {
     $('#tweets-container').append($tweet);
   }
 }
+
+// Tweet mark up and data injection
 
 const createTweetElement = function(data) {
   let $tweet = `
@@ -48,33 +52,7 @@ const createTweetElement = function(data) {
 
 }
 
-// const data = [
-//   {
-//     "user": {
-//       "name": "Newton",
-//       "avatars": "https://i.imgur.com/73hZDYK.png"
-//       ,
-//       "handle": "@SirIsaac"
-//     },
-//     "content": {
-//       "text": "If I have seen further it is by standing on the shoulders of giants"
-//     },
-//     "created_at": 1461116232227
-//   },
-//   {
-//     "user": {
-//       "name": "Descartes",
-//       "avatars": "https://i.imgur.com/nlhLi3I.png",
-//       "handle": "@rd" },
-//     "content": {
-//       "text": "Je pense , donc je suis"
-//     },
-//     "created_at": 1461113959088
-//   }
-// ]
-
-// renderTweets(data);
-
+// Tweet post and refreshing a page
 
 $("#tweet-form").on("submit", function(event) {
   event.preventDefault();
@@ -88,7 +66,7 @@ $("#tweet-form").on("submit", function(event) {
     $.post('/tweets', $(this).serialize())
     .then($('#tweets-container').empty())
     .then(loadTweets);
-    
+
     $("#tweet-text").val('');
 
   }
@@ -103,7 +81,5 @@ const loadTweets = function() {
 }
 
 const $tweets = loadTweets();
-
-// renderTweets($tweets);
 
 });
