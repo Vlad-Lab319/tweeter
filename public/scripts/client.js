@@ -21,7 +21,18 @@ const renderTweets = function(tweets) {
 // Tweet mark up and data injection
 
 const createTweetElement = function(data) {
-  let $tweet = `
+  
+  //Escape insecure text
+  const escape = function (str) {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
+
+  const safeHTML = `<p>${escape(data.content.text)}</p>`;
+
+  //Tweet mark up
+  let tweet = `
   <article class="tweet">
     <header>
       <div>
@@ -31,9 +42,7 @@ const createTweetElement = function(data) {
         </span>
         <span>${data.user.handle}</span>
       </div>
-      <p>
-      ${data.content.text}
-      </p>
+      ${safeHTML}
     </header>
     <footer>
       <span>
@@ -48,7 +57,7 @@ const createTweetElement = function(data) {
   </article>
   `;
 
-  return $tweet;
+  return tweet;
 
 }
 
@@ -65,19 +74,21 @@ $("#tweet-form").on("submit", function(event) {
 
     $.post('/tweets', $(this).serialize())
     .then($('#tweets-container').empty())
-    .then(loadTweets);
-
-    $("#tweet-text").val('');
-
+    .then(loadTweets)
+    .then($("#tweet-text").val(''))
+    .catch(err => console.log("Error ", err));
   }
 });
+
+// Fetch all tweets
 
 const loadTweets = function() {
   $.ajax('/tweets', { method: 'GET' })
   .then(function (tweets) {
-    console.log('Success: ');
+    // console.log('Success: ');
     renderTweets(tweets);
-  });
+  })
+  .catch(err => console.log("Error ", err));
 }
 
 const $tweets = loadTweets();
