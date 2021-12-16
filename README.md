@@ -1,12 +1,12 @@
 # Tweeter Project
 
-Tweeter is a simple, single-page Twitter clone.
+Tweeter is a simple, single-page Twitter clone. 
+A Single Page App (SPA) built with HTML, CSS, JS, jQuery and AJAX. 
 
-This repository is the starter code for the project: Students will fork and clone this repository, then build upon it to practice their HTML, CSS, JS, jQuery and AJAX front-end skills, and their Node, Express back-end skills.
 
 ## Final Product
 
-!["screenshot description"](https://github.com/Vlad-Lab319/tweeter/blob/master/docs/large_screen.png?raw=true)
+!["screenshot description"](https://github.com/Vlad-Lab319/tweeter/blob/master/docs/large_screen.png)
 
 !["screenshot description"](https://github.com/Vlad-Lab319/tweeter/blob/master/docs/small_screen.png?raw=true)
 
