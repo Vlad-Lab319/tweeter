@@ -12,9 +12,9 @@ const renderTweets = function(tweets) {
   // loops through tweets
   for (let tweet of tweets) {
     // calls createTweetElement for each tweet
-    const $tweet = createTweetElement(tweet);
+    const nextTweet = createTweetElement(tweet);
     // takes return value and appends it to the tweets container
-    $('#tweets-container').prepend($tweet);
+    $('#tweets-container').prepend(nextTweet);
   }
 }
 
@@ -22,7 +22,7 @@ const renderTweets = function(tweets) {
 
 const createTweetElement = function(data) {
   
-  //Escape insecure text
+  // Escape insecure text
   const escape = function (str) {
     let div = document.createElement("div");
     div.appendChild(document.createTextNode(str));
@@ -31,7 +31,7 @@ const createTweetElement = function(data) {
 
   const safeHTML = `<p>${escape(data.content.text)}</p>`;
 
-  //Tweet mark up
+  // Tweet mark up
   let tweet = `
   <article class="tweet">
     <header>
@@ -69,14 +69,9 @@ $("#tweet-form").on("submit", function(event) {
   if (tweetLength > 140) {
     $("#alert").text("Too long tweet! Should be 140 symbols max!");
     $("#alert").show();
-
-    // alert("Too long tweet!");
   } else if (tweetLength === 0 ) {
     $("#alert").slideDown();
     $("#alert").text("Empty tweet is not allowed!");
-    // $("#alert").show();
-    // });
-    // alert("Empty tweet is not allowed!");
   } else {
     $("#alert").hide();
     $.post('/tweets', $(this).serialize())
@@ -93,7 +88,6 @@ $("#tweet-form").on("submit", function(event) {
 const loadTweets = function() {
   $.ajax('/tweets', { method: 'GET' })
   .then(function (tweets) {
-    // console.log('Success: ');
     renderTweets(tweets);
   })
   .catch(err => console.log("Error ", err));

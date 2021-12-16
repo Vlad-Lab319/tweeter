@@ -1,3 +1,7 @@
+/*
+// Large screens styling
+*/
+
 @media only screen and (min-width: 1024px) {
   body{
     display: flex;
@@ -15,33 +19,11 @@
 
   }
 
-  /* .feature {
-    line-height: 300px;
-  } */
-
-  .menu {
-    /* background-color: #111111; */
-    /* color: #f0f0f0; */
-    /* text-align: left; */
-  }
-
-  /* .tagline {
-    display: inline;
-    font-style: italic;
-    font-weight: normal;
-    font-size: 12px;
-    color: tomato;
-    float: right;
-  } */
-
   .container {
     width: 66.7%;
     float: right;
-    /* max-width: 900px; */
     font-size: 20px;
     margin-right: 40px;
-    /* margin-top: 800px; */
-    /* margin: 0 auto; */
   }
 
   .new-tweet {

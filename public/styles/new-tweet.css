@@ -27,15 +27,7 @@
   resize: none;
   height: 18 px;
   padding-top: 0.3em;
-  /* background-color: #f4f1ec; */
-  /* box-shadow: none; */
 }
-
-/* 
-.new-tweet hr {
-  width: 100%;
-  border: 1px solid;
-} */
 
 .new-tweet div {
   display: flex;
