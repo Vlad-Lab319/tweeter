@@ -14,7 +14,7 @@ const renderTweets = function(tweets) {
     // calls createTweetElement for each tweet
     const $tweet = createTweetElement(tweet);
     // takes return value and appends it to the tweets container
-    $('#tweets-container').append($tweet);
+    $('#tweets-container').prepend($tweet);
   }
 }
 
@@ -83,6 +83,7 @@ $("#tweet-form").on("submit", function(event) {
     .then($('#tweets-container').empty())
     .then(loadTweets)
     .then($("#tweet-text").val(''))
+    .then($(".counter").val('140'))
     .catch(err => console.log("Error ", err));
   }
 });
