@@ -67,11 +67,18 @@ $("#tweet-form").on("submit", function(event) {
   event.preventDefault();
   const tweetLength = $("#tweet-text").val().length;
   if (tweetLength > 140) {
-    alert("Too long tweet!");
-  } else if (tweetLength === 0 ) {
-    alert("Empty tweet is not allowed!");
-  } else {
+    $("#alert").text("Too long tweet! Should be 140 symbols max!");
+    $("#alert").show();
 
+    // alert("Too long tweet!");
+  } else if (tweetLength === 0 ) {
+    $("#alert").slideDown();
+    $("#alert").text("Empty tweet is not allowed!");
+    // $("#alert").show();
+    // });
+    // alert("Empty tweet is not allowed!");
+  } else {
+    $("#alert").hide();
     $.post('/tweets', $(this).serialize())
     .then($('#tweets-container').empty())
     .then(loadTweets)
