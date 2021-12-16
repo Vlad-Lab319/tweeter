@@ -29,11 +29,14 @@ body {
  */
 
  main.container {
-   width: 90%;
-   margin: auto;
+   width: 95%;
+   /* margin: auto; */
+   margin-left: 20px; 
+   margin-right: 20px; 
    display: flex;
    flex-direction: column;
    justify-items: center;
    align-items: center;
+   min-width: 460px;
    
  }
