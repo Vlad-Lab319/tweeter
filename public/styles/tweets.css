@@ -49,6 +49,8 @@
   margin-top: 20px;
   margin-bottom: 0;
   padding-left: 20px;
+  padding-right: 20px;
+  overflow-wrap: break-word;
   /* padding-top: 30; */
   /* padding-bottom: 40; */
   border-bottom: 3px solid;
