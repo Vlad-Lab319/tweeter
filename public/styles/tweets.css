@@ -68,3 +68,11 @@
 .tweet footer div .fas:hover{
   color: #B8860B;
 }
+
+/* 
+// Hide 
+*/
+
+.tweets.hide {
+  margin-top: 200px;
+}
