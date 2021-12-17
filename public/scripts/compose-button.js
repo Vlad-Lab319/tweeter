@@ -15,6 +15,7 @@ $(document).ready(() => {
     } else {
       $(".new-tweet").slideDown();
       $(".tweets").toggleClass("hide");
+      $("#tweet-text").focus();
       hidden = false;
     }
   });
